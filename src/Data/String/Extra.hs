@@ -11,9 +11,9 @@ module Data.String.Extra
   )
 where
 
-import Data.Char (isSpace, toLower)
-import Data.List.Extra (dropRight, intercalate, isSuffixOf)
-import Prelude
+import           Data.Char       (isSpace, toLower)
+import           Data.List.Extra (dropRight, intercalate, isSuffixOf)
+import           Prelude
 
 -- This functions throws runtime error on a string that contains any non-numeric characters.
 -- So please, don't use the function called _stringToInt_ on non-integer numbers.
@@ -24,7 +24,7 @@ trim :: String -> String
 trim = f . f where f = reverse . dropWhile isSpace
 
 joinToString :: String -> [String] -> String
-joinToString _ [] = ""
+joinToString _ []         = ""
 joinToString separator ws = intercalate separator ws
 
 (+:) :: String -> Int -> String

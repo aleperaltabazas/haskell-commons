@@ -13,14 +13,14 @@ module Data.String.Conversions
   )
 where
 
-import qualified Data.ByteString as S (ByteString, concat)
+import qualified Data.ByteString       as S (ByteString, concat)
 import qualified Data.ByteString.Char8 as C8 (pack)
 -- from utf8-string
-import qualified Data.ByteString.Lazy as BL
-import qualified Data.ByteString.UTF8 as BSU (toString)
-import Data.Text (Text)
+import qualified Data.ByteString.Lazy  as BL
+import qualified Data.ByteString.UTF8  as BSU (toString)
+import           Data.Text             (Text)
 import qualified Data.Text.Conversions as Text
-import Prelude
+import           Prelude
 
 type ByteString = S.ByteString
 

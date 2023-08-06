@@ -14,11 +14,11 @@ module Data.List.Extra
   )
 where
 
-import Data.List
-import Data.List.Split (chunk, chunksOf, splitOn, splitWhen)
-import Data.Maybe (fromMaybe)
-import Data.Tuple.Extra (mapSnd)
-import Prelude
+import           Data.List
+import           Data.List.Split  (chunk, chunksOf, splitOn, splitWhen)
+import           Data.Maybe       (fromMaybe)
+import           Data.Tuple.Extra (mapSnd)
+import           Prelude
 
 dropRight :: Int -> [a] -> [a]
 dropRight n xs = take (length xs - n) xs
@@ -35,13 +35,13 @@ concatMapM f = (concat <$>) . mapM f
 findWithIndex :: (a -> Bool) -> [a] -> Maybe (a, Int)
 findWithIndex = go 0
   where
-    go _ _ [] = Nothing
+    go _ _ []       = Nothing
     go i f (x : xs) = if f x then return (x, i) else go (i + 1) f xs
 
 mapWithIndex :: (a -> Int -> b) -> [a] -> [b]
 mapWithIndex = go 0
   where
-    go _ _ [] = []
+    go _ _ []       = []
     go i f (x : xs) = f x i : go (i + 1) f xs
 
 none :: (a -> Bool) -> [a] -> Bool

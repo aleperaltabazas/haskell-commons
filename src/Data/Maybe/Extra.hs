@@ -8,9 +8,9 @@ module Data.Maybe.Extra
   )
 where
 
-import Data.Bool.Extra ((.&.))
-import Data.Maybe
-import Prelude
+import           Data.Bool.Extra ((.&.))
+import           Data.Maybe
+import           Prelude
 
 infixr 2 ?:
 
@@ -26,7 +26,7 @@ getOrElse Nothing ma = ma
 
 runMaybeIO :: Maybe (IO a) -> IO (Maybe a)
 runMaybeIO (Just a) = Just <$> a
-runMaybeIO Nothing = return Nothing
+runMaybeIO Nothing  = return Nothing
 
 exists :: (a -> Bool) -> Maybe a -> Bool
 exists f = isJust .&. (f . fromJust)

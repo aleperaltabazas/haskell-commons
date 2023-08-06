@@ -8,9 +8,9 @@ module Control.Monad.Extra
   )
 where
 
-import Control.Monad hiding (join)
+import           Control.Monad hiding (join)
 import qualified Control.Monad as Monad
-import Prelude
+import           Prelude
 
 whenM :: (Monad m) => m Bool -> m () -> m ()
 whenM cond f = do

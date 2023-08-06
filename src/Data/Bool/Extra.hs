@@ -5,7 +5,7 @@ module Data.Bool.Extra
   )
 where
 
-import Data.Bool
+import           Data.Bool
 
 (.|.) :: (a -> Bool) -> (a -> Bool) -> (a -> Bool)
 f .|. g = \x -> f x || g x
