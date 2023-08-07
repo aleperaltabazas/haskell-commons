@@ -1,6 +1,7 @@
 module Options.Class
-  ( Options (..),
-  setProgramHeader
+  ( Options (..)
+  , setProgramHeader
+  , makeInfo
   )
 where
 
@@ -25,3 +26,5 @@ class Options o where
     let result = execParserPure defaultPrefs opts args
     handleParseResult result
 
+makeInfo :: String -> Parser a -> ParserInfo a
+makeInfo desc parser = info (parser <**> helper) (progDesc desc)
